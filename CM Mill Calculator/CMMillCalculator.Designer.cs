@@ -35,6 +35,7 @@
             this.txtDistance = new System.Windows.Forms.TextBox();
             this.lblDistance = new System.Windows.Forms.Label();
             this.gbDirection = new System.Windows.Forms.GroupBox();
+            this.rbAngle = new System.Windows.Forms.RadioButton();
             this.lbl90 = new System.Windows.Forms.Label();
             this.lbl270 = new System.Windows.Forms.Label();
             this.rbRight = new System.Windows.Forms.RadioButton();
@@ -46,23 +47,19 @@
             this.txtAngle = new System.Windows.Forms.TextBox();
             this.lblAngle = new System.Windows.Forms.Label();
             this.btnCalculate = new System.Windows.Forms.Button();
-            this.chkEdgeFinder = new System.Windows.Forms.CheckBox();
-            this.txtEdgeFinder = new System.Windows.Forms.TextBox();
             this.txtDstTurn = new System.Windows.Forms.TextBox();
             this.lblDSTTurn = new System.Windows.Forms.Label();
             this.lblLeftWheel = new System.Windows.Forms.Label();
             this.lblRightWheel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtXLW = new System.Windows.Forms.TextBox();
-            this.txtXRW = new System.Windows.Forms.TextBox();
-            this.txtYFW = new System.Windows.Forms.TextBox();
-            this.lblInches1 = new System.Windows.Forms.Label();
-            this.lblInches2 = new System.Windows.Forms.Label();
-            this.rbAngle = new System.Windows.Forms.RadioButton();
-            this.lblXLD = new System.Windows.Forms.Label();
-            this.lblXRD = new System.Windows.Forms.Label();
             this.lblYFD = new System.Windows.Forms.Label();
+            this.lblXRD = new System.Windows.Forms.Label();
+            this.lblXLD = new System.Windows.Forms.Label();
+            this.txtYFW = new System.Windows.Forms.TextBox();
+            this.txtXRW = new System.Windows.Forms.TextBox();
+            this.txtXLW = new System.Windows.Forms.TextBox();
+            this.lblInches2 = new System.Windows.Forms.Label();
             this.gbUnits.SuspendLayout();
             this.gbDirection.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -134,6 +131,19 @@
             this.gbDirection.TabIndex = 5;
             this.gbDirection.TabStop = false;
             this.gbDirection.Text = "Towards Direction";
+            // 
+            // rbAngle
+            // 
+            this.rbAngle.AutoSize = true;
+            this.rbAngle.Checked = true;
+            this.rbAngle.Location = new System.Drawing.Point(142, 107);
+            this.rbAngle.Name = "rbAngle";
+            this.rbAngle.Size = new System.Drawing.Size(65, 21);
+            this.rbAngle.TabIndex = 10;
+            this.rbAngle.TabStop = true;
+            this.rbAngle.Text = "Angle";
+            this.rbAngle.UseVisualStyleBackColor = true;
+            this.rbAngle.CheckedChanged += new System.EventHandler(this.rbAngle_CheckedChanged);
             // 
             // lbl90
             // 
@@ -241,27 +251,9 @@
             this.btnCalculate.UseVisualStyleBackColor = true;
             this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
             // 
-            // chkEdgeFinder
-            // 
-            this.chkEdgeFinder.AutoSize = true;
-            this.chkEdgeFinder.Location = new System.Drawing.Point(243, 14);
-            this.chkEdgeFinder.Name = "chkEdgeFinder";
-            this.chkEdgeFinder.Size = new System.Drawing.Size(107, 21);
-            this.chkEdgeFinder.TabIndex = 9;
-            this.chkEdgeFinder.Text = "Edge Finder";
-            this.chkEdgeFinder.UseVisualStyleBackColor = true;
-            // 
-            // txtEdgeFinder
-            // 
-            this.txtEdgeFinder.Location = new System.Drawing.Point(346, 12);
-            this.txtEdgeFinder.Name = "txtEdgeFinder";
-            this.txtEdgeFinder.Size = new System.Drawing.Size(51, 22);
-            this.txtEdgeFinder.TabIndex = 10;
-            this.txtEdgeFinder.Text = "0.100";
-            // 
             // txtDstTurn
             // 
-            this.txtDstTurn.Location = new System.Drawing.Point(346, 41);
+            this.txtDstTurn.Location = new System.Drawing.Point(350, 19);
             this.txtDstTurn.Name = "txtDstTurn";
             this.txtDstTurn.Size = new System.Drawing.Size(51, 22);
             this.txtDstTurn.TabIndex = 11;
@@ -270,7 +262,7 @@
             // lblDSTTurn
             // 
             this.lblDSTTurn.AutoSize = true;
-            this.lblDSTTurn.Location = new System.Drawing.Point(245, 44);
+            this.lblDSTTurn.Location = new System.Drawing.Point(249, 22);
             this.lblDSTTurn.Name = "lblDSTTurn";
             this.lblDSTTurn.Size = new System.Drawing.Size(95, 17);
             this.lblDSTTurn.TabIndex = 12;
@@ -321,66 +313,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Wheel Movement";
             // 
-            // txtXLW
+            // lblYFD
             // 
-            this.txtXLW.Location = new System.Drawing.Point(18, 102);
-            this.txtXLW.Name = "txtXLW";
-            this.txtXLW.Size = new System.Drawing.Size(100, 22);
-            this.txtXLW.TabIndex = 16;
-            // 
-            // txtXRW
-            // 
-            this.txtXRW.Location = new System.Drawing.Point(282, 102);
-            this.txtXRW.Name = "txtXRW";
-            this.txtXRW.Size = new System.Drawing.Size(100, 22);
-            this.txtXRW.TabIndex = 17;
-            // 
-            // txtYFW
-            // 
-            this.txtYFW.Location = new System.Drawing.Point(145, 183);
-            this.txtYFW.Name = "txtYFW";
-            this.txtYFW.Size = new System.Drawing.Size(100, 22);
-            this.txtYFW.TabIndex = 18;
-            // 
-            // lblInches1
-            // 
-            this.lblInches1.AutoSize = true;
-            this.lblInches1.Location = new System.Drawing.Point(403, 15);
-            this.lblInches1.Name = "lblInches1";
-            this.lblInches1.Size = new System.Drawing.Size(49, 17);
-            this.lblInches1.TabIndex = 17;
-            this.lblInches1.Text = "inches";
-            // 
-            // lblInches2
-            // 
-            this.lblInches2.AutoSize = true;
-            this.lblInches2.Location = new System.Drawing.Point(403, 44);
-            this.lblInches2.Name = "lblInches2";
-            this.lblInches2.Size = new System.Drawing.Size(49, 17);
-            this.lblInches2.TabIndex = 18;
-            this.lblInches2.Text = "inches";
-            // 
-            // rbAngle
-            // 
-            this.rbAngle.AutoSize = true;
-            this.rbAngle.Checked = true;
-            this.rbAngle.Location = new System.Drawing.Point(142, 107);
-            this.rbAngle.Name = "rbAngle";
-            this.rbAngle.Size = new System.Drawing.Size(65, 21);
-            this.rbAngle.TabIndex = 10;
-            this.rbAngle.TabStop = true;
-            this.rbAngle.Text = "Angle";
-            this.rbAngle.UseVisualStyleBackColor = true;
-            this.rbAngle.CheckedChanged += new System.EventHandler(this.rbAngle_CheckedChanged);
-            // 
-            // lblXLD
-            // 
-            this.lblXLD.AutoSize = true;
-            this.lblXLD.Location = new System.Drawing.Point(47, 127);
-            this.lblXLD.Name = "lblXLD";
-            this.lblXLD.Size = new System.Drawing.Size(39, 17);
-            this.lblXLD.TabIndex = 19;
-            this.lblXLD.Text = "CCW";
+            this.lblYFD.AutoSize = true;
+            this.lblYFD.Location = new System.Drawing.Point(177, 208);
+            this.lblYFD.Name = "lblYFD";
+            this.lblYFD.Size = new System.Drawing.Size(30, 17);
+            this.lblYFD.TabIndex = 21;
+            this.lblYFD.Text = "CW";
             // 
             // lblXRD
             // 
@@ -391,14 +331,44 @@
             this.lblXRD.TabIndex = 20;
             this.lblXRD.Text = "CW";
             // 
-            // lblYFD
+            // lblXLD
             // 
-            this.lblYFD.AutoSize = true;
-            this.lblYFD.Location = new System.Drawing.Point(177, 208);
-            this.lblYFD.Name = "lblYFD";
-            this.lblYFD.Size = new System.Drawing.Size(30, 17);
-            this.lblYFD.TabIndex = 21;
-            this.lblYFD.Text = "CW";
+            this.lblXLD.AutoSize = true;
+            this.lblXLD.Location = new System.Drawing.Point(47, 127);
+            this.lblXLD.Name = "lblXLD";
+            this.lblXLD.Size = new System.Drawing.Size(39, 17);
+            this.lblXLD.TabIndex = 19;
+            this.lblXLD.Text = "CCW";
+            // 
+            // txtYFW
+            // 
+            this.txtYFW.Location = new System.Drawing.Point(145, 183);
+            this.txtYFW.Name = "txtYFW";
+            this.txtYFW.Size = new System.Drawing.Size(100, 22);
+            this.txtYFW.TabIndex = 18;
+            // 
+            // txtXRW
+            // 
+            this.txtXRW.Location = new System.Drawing.Point(282, 102);
+            this.txtXRW.Name = "txtXRW";
+            this.txtXRW.Size = new System.Drawing.Size(100, 22);
+            this.txtXRW.TabIndex = 17;
+            // 
+            // txtXLW
+            // 
+            this.txtXLW.Location = new System.Drawing.Point(18, 102);
+            this.txtXLW.Name = "txtXLW";
+            this.txtXLW.Size = new System.Drawing.Size(100, 22);
+            this.txtXLW.TabIndex = 16;
+            // 
+            // lblInches2
+            // 
+            this.lblInches2.AutoSize = true;
+            this.lblInches2.Location = new System.Drawing.Point(407, 22);
+            this.lblInches2.Name = "lblInches2";
+            this.lblInches2.Size = new System.Drawing.Size(49, 17);
+            this.lblInches2.TabIndex = 18;
+            this.lblInches2.Text = "inches";
             // 
             // CMMillCalculator
             // 
@@ -406,12 +376,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(859, 450);
             this.Controls.Add(this.lblInches2);
-            this.Controls.Add(this.lblInches1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblDSTTurn);
             this.Controls.Add(this.txtDstTurn);
-            this.Controls.Add(this.txtEdgeFinder);
-            this.Controls.Add(this.chkEdgeFinder);
             this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.lblAngle);
             this.Controls.Add(this.txtAngle);
@@ -421,7 +388,7 @@
             this.Controls.Add(this.gbUnits);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CMMillCalculator";
-            this.Text = "Mill Calculator v1.02";
+            this.Text = "Mill Calculator v1.03";
             this.gbUnits.ResumeLayout(false);
             this.gbUnits.PerformLayout();
             this.gbDirection.ResumeLayout(false);
@@ -452,8 +419,6 @@
         private System.Windows.Forms.TextBox txtAngle;
         private System.Windows.Forms.Label lblAngle;
         private System.Windows.Forms.Button btnCalculate;
-        private System.Windows.Forms.CheckBox chkEdgeFinder;
-        private System.Windows.Forms.TextBox txtEdgeFinder;
         private System.Windows.Forms.TextBox txtDstTurn;
         private System.Windows.Forms.Label lblDSTTurn;
         private System.Windows.Forms.Label lblLeftWheel;
@@ -463,7 +428,6 @@
         private System.Windows.Forms.TextBox txtXRW;
         private System.Windows.Forms.TextBox txtXLW;
         private System.Windows.Forms.TextBox txtYFW;
-        private System.Windows.Forms.Label lblInches1;
         private System.Windows.Forms.Label lblInches2;
         private System.Windows.Forms.RadioButton rbAngle;
         private System.Windows.Forms.Label lblYFD;

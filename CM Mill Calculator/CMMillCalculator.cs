@@ -22,7 +22,6 @@ namespace CM_Mill_Calculator
             double conversion = 1.0;
             double distance = 0.0;
             double dstperturn = 0.0;
-            double edgefinder = 0.0;
             double angle = 0.0;
             double radangle = 0.0;
             double x, y;
@@ -52,20 +51,7 @@ namespace CM_Mill_Calculator
             else
                 conversion = 0.03937;
 
-            try
-            {
-                if (chkEdgeFinder.Checked == true)
-                {
-                    edgefinder = Convert.ToDouble(txtEdgeFinder.Text);
-                    if (!(angle == 0.0 || angle == 90.0 || angle == 180.0 || angle == 270.0)) { edgefinder = 0.0; chkEdgeFinder.Checked = false; }// Use edge finder only on cardinal directions
-                }
-                else
-                    edgefinder = 0.0;
-            }
-            catch { return; }
-
             distance *= conversion; // Convert if metric
-            distance += edgefinder;
 
             x = distance * Math.Sin(radangle);
             y = distance * Math.Cos(radangle);
