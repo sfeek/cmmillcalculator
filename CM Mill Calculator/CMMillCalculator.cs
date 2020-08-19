@@ -111,5 +111,34 @@ namespace CM_Mill_Calculator
         {
             txtAngle.Text = "0.0";
         }
+
+        private void btnWCalculate_Click(object sender, EventArgs e)
+        {
+            double wThousandths;
+            int wTurns;
+            double conversion;
+            double distPerTurn;
+            double tDistance;
+
+            txtWDistance.Text = String.Empty;
+
+            try
+            {
+                distPerTurn = Convert.ToDouble(txtDstTurn.Text);
+
+                if (rbInches.Checked == true)
+                    conversion = 1.0;
+                else
+                    conversion = 0.03937;
+
+                wTurns = Convert.ToInt32(txtWTurns.Text);
+                wThousandths = Convert.ToDouble(txtWThousandths.Text) / 1000;
+
+                tDistance = (wTurns * distPerTurn + wThousandths) / conversion;
+
+                txtWDistance.Text = Math.Round(tDistance, 4).ToString();
+            }
+            catch { return; }
+        }
     }
 }

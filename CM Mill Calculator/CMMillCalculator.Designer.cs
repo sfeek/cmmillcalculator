@@ -59,10 +59,18 @@
             this.txtYFW = new System.Windows.Forms.TextBox();
             this.txtXRW = new System.Windows.Forms.TextBox();
             this.txtXLW = new System.Windows.Forms.TextBox();
-            this.lblInches2 = new System.Windows.Forms.Label();
+            this.gbWheelToDistance = new System.Windows.Forms.GroupBox();
+            this.lblWDistance = new System.Windows.Forms.Label();
+            this.txtWDistance = new System.Windows.Forms.TextBox();
+            this.btnWCalculate = new System.Windows.Forms.Button();
+            this.lblThousandths = new System.Windows.Forms.Label();
+            this.lblTurns = new System.Windows.Forms.Label();
+            this.txtWThousandths = new System.Windows.Forms.TextBox();
+            this.txtWTurns = new System.Windows.Forms.TextBox();
             this.gbUnits.SuspendLayout();
             this.gbDirection.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.gbWheelToDistance.SuspendLayout();
             this.SuspendLayout();
             // 
             // rbInches
@@ -100,7 +108,7 @@
             // 
             // txtDistance
             // 
-            this.txtDistance.Location = new System.Drawing.Point(98, 82);
+            this.txtDistance.Location = new System.Drawing.Point(98, 90);
             this.txtDistance.Name = "txtDistance";
             this.txtDistance.Size = new System.Drawing.Size(100, 22);
             this.txtDistance.TabIndex = 3;
@@ -108,7 +116,7 @@
             // lblDistance
             // 
             this.lblDistance.AutoSize = true;
-            this.lblDistance.Location = new System.Drawing.Point(29, 85);
+            this.lblDistance.Location = new System.Drawing.Point(29, 93);
             this.lblDistance.Name = "lblDistance";
             this.lblDistance.Size = new System.Drawing.Size(63, 17);
             this.lblDistance.TabIndex = 4;
@@ -125,7 +133,7 @@
             this.gbDirection.Controls.Add(this.rbFront);
             this.gbDirection.Controls.Add(this.lbl0);
             this.gbDirection.Controls.Add(this.rbBack);
-            this.gbDirection.Location = new System.Drawing.Point(30, 110);
+            this.gbDirection.Location = new System.Drawing.Point(50, 132);
             this.gbDirection.Name = "gbDirection";
             this.gbDirection.Size = new System.Drawing.Size(333, 218);
             this.gbDirection.TabIndex = 5;
@@ -227,7 +235,7 @@
             // 
             // txtAngle
             // 
-            this.txtAngle.Location = new System.Drawing.Point(275, 82);
+            this.txtAngle.Location = new System.Drawing.Point(275, 90);
             this.txtAngle.Name = "txtAngle";
             this.txtAngle.Size = new System.Drawing.Size(88, 22);
             this.txtAngle.TabIndex = 6;
@@ -235,7 +243,7 @@
             // lblAngle
             // 
             this.lblAngle.AutoSize = true;
-            this.lblAngle.Location = new System.Drawing.Point(221, 85);
+            this.lblAngle.Location = new System.Drawing.Point(221, 93);
             this.lblAngle.Name = "lblAngle";
             this.lblAngle.Size = new System.Drawing.Size(44, 17);
             this.lblAngle.TabIndex = 7;
@@ -243,7 +251,7 @@
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(115, 356);
+            this.btnCalculate.Location = new System.Drawing.Point(131, 356);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(150, 46);
             this.btnCalculate.TabIndex = 8;
@@ -257,7 +265,7 @@
             this.txtDstTurn.Name = "txtDstTurn";
             this.txtDstTurn.Size = new System.Drawing.Size(51, 22);
             this.txtDstTurn.TabIndex = 11;
-            this.txtDstTurn.Text = "0.1667";
+            this.txtDstTurn.Text = "0.166667";
             // 
             // lblDSTTurn
             // 
@@ -271,7 +279,7 @@
             // lblLeftWheel
             // 
             this.lblLeftWheel.AutoSize = true;
-            this.lblLeftWheel.Location = new System.Drawing.Point(20, 83);
+            this.lblLeftWheel.Location = new System.Drawing.Point(18, 36);
             this.lblLeftWheel.Name = "lblLeftWheel";
             this.lblLeftWheel.Size = new System.Drawing.Size(98, 17);
             this.lblLeftWheel.TabIndex = 13;
@@ -280,7 +288,7 @@
             // lblRightWheel
             // 
             this.lblRightWheel.AutoSize = true;
-            this.lblRightWheel.Location = new System.Drawing.Point(279, 83);
+            this.lblRightWheel.Location = new System.Drawing.Point(277, 36);
             this.lblRightWheel.Name = "lblRightWheel";
             this.lblRightWheel.Size = new System.Drawing.Size(107, 17);
             this.lblRightWheel.TabIndex = 14;
@@ -289,7 +297,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(138, 163);
+            this.label1.Location = new System.Drawing.Point(136, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 17);
             this.label1.TabIndex = 15;
@@ -306,9 +314,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lblRightWheel);
             this.groupBox1.Controls.Add(this.lblLeftWheel);
-            this.groupBox1.Location = new System.Drawing.Point(427, 110);
+            this.groupBox1.Location = new System.Drawing.Point(419, 174);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(402, 240);
+            this.groupBox1.Size = new System.Drawing.Size(402, 200);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Wheel Movement";
@@ -316,7 +324,7 @@
             // lblYFD
             // 
             this.lblYFD.AutoSize = true;
-            this.lblYFD.Location = new System.Drawing.Point(177, 208);
+            this.lblYFD.Location = new System.Drawing.Point(175, 161);
             this.lblYFD.Name = "lblYFD";
             this.lblYFD.Size = new System.Drawing.Size(30, 17);
             this.lblYFD.TabIndex = 21;
@@ -325,7 +333,7 @@
             // lblXRD
             // 
             this.lblXRD.AutoSize = true;
-            this.lblXRD.Location = new System.Drawing.Point(314, 127);
+            this.lblXRD.Location = new System.Drawing.Point(312, 80);
             this.lblXRD.Name = "lblXRD";
             this.lblXRD.Size = new System.Drawing.Size(30, 17);
             this.lblXRD.TabIndex = 20;
@@ -334,7 +342,7 @@
             // lblXLD
             // 
             this.lblXLD.AutoSize = true;
-            this.lblXLD.Location = new System.Drawing.Point(47, 127);
+            this.lblXLD.Location = new System.Drawing.Point(45, 80);
             this.lblXLD.Name = "lblXLD";
             this.lblXLD.Size = new System.Drawing.Size(39, 17);
             this.lblXLD.TabIndex = 19;
@@ -342,40 +350,105 @@
             // 
             // txtYFW
             // 
-            this.txtYFW.Location = new System.Drawing.Point(145, 183);
+            this.txtYFW.Location = new System.Drawing.Point(143, 136);
             this.txtYFW.Name = "txtYFW";
             this.txtYFW.Size = new System.Drawing.Size(100, 22);
             this.txtYFW.TabIndex = 18;
             // 
             // txtXRW
             // 
-            this.txtXRW.Location = new System.Drawing.Point(282, 102);
+            this.txtXRW.Location = new System.Drawing.Point(280, 55);
             this.txtXRW.Name = "txtXRW";
             this.txtXRW.Size = new System.Drawing.Size(100, 22);
             this.txtXRW.TabIndex = 17;
             // 
             // txtXLW
             // 
-            this.txtXLW.Location = new System.Drawing.Point(18, 102);
+            this.txtXLW.Location = new System.Drawing.Point(16, 55);
             this.txtXLW.Name = "txtXLW";
             this.txtXLW.Size = new System.Drawing.Size(100, 22);
             this.txtXLW.TabIndex = 16;
             // 
-            // lblInches2
+            // gbWheelToDistance
             // 
-            this.lblInches2.AutoSize = true;
-            this.lblInches2.Location = new System.Drawing.Point(407, 22);
-            this.lblInches2.Name = "lblInches2";
-            this.lblInches2.Size = new System.Drawing.Size(49, 17);
-            this.lblInches2.TabIndex = 18;
-            this.lblInches2.Text = "inches";
+            this.gbWheelToDistance.Controls.Add(this.lblWDistance);
+            this.gbWheelToDistance.Controls.Add(this.txtWDistance);
+            this.gbWheelToDistance.Controls.Add(this.btnWCalculate);
+            this.gbWheelToDistance.Controls.Add(this.lblThousandths);
+            this.gbWheelToDistance.Controls.Add(this.lblTurns);
+            this.gbWheelToDistance.Controls.Add(this.txtWThousandths);
+            this.gbWheelToDistance.Controls.Add(this.txtWTurns);
+            this.gbWheelToDistance.Location = new System.Drawing.Point(462, 19);
+            this.gbWheelToDistance.Name = "gbWheelToDistance";
+            this.gbWheelToDistance.Size = new System.Drawing.Size(359, 114);
+            this.gbWheelToDistance.TabIndex = 19;
+            this.gbWheelToDistance.TabStop = false;
+            this.gbWheelToDistance.Text = "Wheel to Distance";
+            // 
+            // lblWDistance
+            // 
+            this.lblWDistance.AutoSize = true;
+            this.lblWDistance.Location = new System.Drawing.Point(168, 34);
+            this.lblWDistance.Name = "lblWDistance";
+            this.lblWDistance.Size = new System.Drawing.Size(63, 17);
+            this.lblWDistance.TabIndex = 6;
+            this.lblWDistance.Text = "Distance";
+            // 
+            // txtWDistance
+            // 
+            this.txtWDistance.Location = new System.Drawing.Point(237, 31);
+            this.txtWDistance.Name = "txtWDistance";
+            this.txtWDistance.Size = new System.Drawing.Size(100, 22);
+            this.txtWDistance.TabIndex = 5;
+            // 
+            // btnWCalculate
+            // 
+            this.btnWCalculate.Location = new System.Drawing.Point(237, 66);
+            this.btnWCalculate.Name = "btnWCalculate";
+            this.btnWCalculate.Size = new System.Drawing.Size(91, 32);
+            this.btnWCalculate.TabIndex = 4;
+            this.btnWCalculate.Text = "Calculate";
+            this.btnWCalculate.UseVisualStyleBackColor = true;
+            this.btnWCalculate.Click += new System.EventHandler(this.btnWCalculate_Click);
+            // 
+            // lblThousandths
+            // 
+            this.lblThousandths.AutoSize = true;
+            this.lblThousandths.Location = new System.Drawing.Point(3, 64);
+            this.lblThousandths.Name = "lblThousandths";
+            this.lblThousandths.Size = new System.Drawing.Size(91, 17);
+            this.lblThousandths.TabIndex = 3;
+            this.lblThousandths.Text = "Thousandths";
+            // 
+            // lblTurns
+            // 
+            this.lblTurns.AutoSize = true;
+            this.lblTurns.Location = new System.Drawing.Point(49, 36);
+            this.lblTurns.Name = "lblTurns";
+            this.lblTurns.Size = new System.Drawing.Size(45, 17);
+            this.lblTurns.TabIndex = 2;
+            this.lblTurns.Text = "Turns";
+            // 
+            // txtWThousandths
+            // 
+            this.txtWThousandths.Location = new System.Drawing.Point(100, 61);
+            this.txtWThousandths.Name = "txtWThousandths";
+            this.txtWThousandths.Size = new System.Drawing.Size(62, 22);
+            this.txtWThousandths.TabIndex = 1;
+            // 
+            // txtWTurns
+            // 
+            this.txtWTurns.Location = new System.Drawing.Point(100, 33);
+            this.txtWTurns.Name = "txtWTurns";
+            this.txtWTurns.Size = new System.Drawing.Size(62, 22);
+            this.txtWTurns.TabIndex = 0;
             // 
             // CMMillCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 450);
-            this.Controls.Add(this.lblInches2);
+            this.ClientSize = new System.Drawing.Size(859, 423);
+            this.Controls.Add(this.gbWheelToDistance);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblDSTTurn);
             this.Controls.Add(this.txtDstTurn);
@@ -388,13 +461,15 @@
             this.Controls.Add(this.gbUnits);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CMMillCalculator";
-            this.Text = "Mill Calculator v1.03";
+            this.Text = "Central Machine Mill Calculator v1.05";
             this.gbUnits.ResumeLayout(false);
             this.gbUnits.PerformLayout();
             this.gbDirection.ResumeLayout(false);
             this.gbDirection.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.gbWheelToDistance.ResumeLayout(false);
+            this.gbWheelToDistance.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -428,11 +503,18 @@
         private System.Windows.Forms.TextBox txtXRW;
         private System.Windows.Forms.TextBox txtXLW;
         private System.Windows.Forms.TextBox txtYFW;
-        private System.Windows.Forms.Label lblInches2;
         private System.Windows.Forms.RadioButton rbAngle;
         private System.Windows.Forms.Label lblYFD;
         private System.Windows.Forms.Label lblXRD;
         private System.Windows.Forms.Label lblXLD;
+        private System.Windows.Forms.GroupBox gbWheelToDistance;
+        private System.Windows.Forms.Label lblWDistance;
+        private System.Windows.Forms.TextBox txtWDistance;
+        private System.Windows.Forms.Button btnWCalculate;
+        private System.Windows.Forms.Label lblThousandths;
+        private System.Windows.Forms.Label lblTurns;
+        private System.Windows.Forms.TextBox txtWThousandths;
+        private System.Windows.Forms.TextBox txtWTurns;
     }
 }
 
