@@ -54,10 +54,10 @@
     <ApplicationIcon>clipartkey_3140399_Uer_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>E3071D4B50B221352FBF6B5A3CF54175B14766C9</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>4BB8A0593F938B1E01F6C69D1FE54AF9D9CF29E2</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>CM Mill Calculator_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>CM Mill Calculator_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -99,6 +99,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="CM Mill Calculator_1_TemporaryKey.pfx" />
     <None Include="CM Mill Calculator_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
