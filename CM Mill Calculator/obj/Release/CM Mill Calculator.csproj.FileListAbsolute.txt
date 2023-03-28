@@ -1,0 +1,15 @@
+D:\Source Code\cmmillcalculator\CM Mill Calculator\bin\Release\CM Mill Calculator.exe.config
+D:\Source Code\cmmillcalculator\CM Mill Calculator\bin\Release\CM Mill Calculator.exe.manifest
+D:\Source Code\cmmillcalculator\CM Mill Calculator\bin\Release\CM Mill Calculator.application
+D:\Source Code\cmmillcalculator\CM Mill Calculator\bin\Release\CM Mill Calculator.exe
+D:\Source Code\cmmillcalculator\CM Mill Calculator\bin\Release\CM Mill Calculator.pdb
+D:\Source Code\cmmillcalculator\CM Mill Calculator\obj\Release\CM Mill Calculator.csproj.AssemblyReference.cache
+D:\Source Code\cmmillcalculator\CM Mill Calculator\obj\Release\CM Mill Calculator.csproj.SuggestedBindingRedirects.cache
+D:\Source Code\cmmillcalculator\CM Mill Calculator\obj\Release\CM_Mill_Calculator.CMMillCalculator.resources
+D:\Source Code\cmmillcalculator\CM Mill Calculator\obj\Release\CM_Mill_Calculator.Properties.Resources.resources
+D:\Source Code\cmmillcalculator\CM Mill Calculator\obj\Release\CM Mill Calculator.csproj.GenerateResource.cache
+D:\Source Code\cmmillcalculator\CM Mill Calculator\obj\Release\CM Mill Calculator.csproj.CoreCompileInputs.cache
+D:\Source Code\cmmillcalculator\CM Mill Calculator\obj\Release\CM Mill Calculator.exe.manifest
+D:\Source Code\cmmillcalculator\CM Mill Calculator\obj\Release\CM Mill Calculator.application
+D:\Source Code\cmmillcalculator\CM Mill Calculator\obj\Release\CM Mill Calculator.exe
+D:\Source Code\cmmillcalculator\CM Mill Calculator\obj\Release\CM Mill Calculator.pdb
