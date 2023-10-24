@@ -548,7 +548,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CMMillCalculator";
-            this.Text = "Central Machine Mill Calculator v1.1";
+            this.Text = "Central Machine Mill Calculator v1.2";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CMMillCalculator_FormClosed);
             this.gbUnits.ResumeLayout(false);
             this.gbUnits.PerformLayout();

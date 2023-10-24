@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -39,6 +40,7 @@ namespace CM_Mill_Calculator
             double radangle;
             double x, y;
             double xturns, xremainder, yturns, yremainder;
+            double xdt, ydt;
 
             try
             {
@@ -70,39 +72,87 @@ namespace CM_Mill_Calculator
             else
                 conversion = 0.03937;
 
+            xdt = Math.Round(xdstperturn * 1000);
+            ydt = Math.Round(ydstperturn * 1000);
+
             distance *= conversion; // Convert if metric
 
             x = distance * Math.Sin(radangle);
             y = distance * Math.Cos(radangle);
 
             xturns = Math.Truncate(x / xdstperturn);
-            xremainder = Math.Round(((x / xdstperturn) - xturns) * xdstperturn * 1000,0);
+            xremainder = Math.Round(((x / xdstperturn) - xturns) * xdstperturn * 1000, 0);
 
             yturns = Math.Truncate(y / ydstperturn);
             yremainder = Math.Round(((y / ydstperturn) - yturns) * ydstperturn * 1000,0);
-
-            txtXLW.Text = Math.Abs(xturns).ToString() + "T + " + Math.Abs(xremainder).ToString();
-            txtYFW.Text = Math.Abs(yturns).ToString() + "T + " + Math.Abs(yremainder).ToString();
-            txtXRW.Text = txtXLW.Text;
 
             if (xturns > 0 || xremainder > 0)
             {
                 lblXLD.Text = "CCW";
                 lblXRD.Text = "CW";
+
+                xremainder = Math.Abs(xremainder);
+
+                if (xremainder == 0.0)
+                {
+                    txtXRW.Text = Math.Abs(xturns).ToString() + "T";
+                    txtXLW.Text = Math.Abs(xturns).ToString() + "T";
+
+                }
+                else
+                {
+                    txtXRW.Text = Math.Abs(xturns).ToString() + "T + " + xremainder.ToString();
+                    txtXLW.Text = Math.Abs(xturns).ToString() + "T - " + (xdt - xremainder).ToString();
+                }
             }
             else
             {
                 lblXLD.Text = "CW";
                 lblXRD.Text = "CCW";
+
+                xremainder = Math.Abs(xremainder);
+
+                if (xremainder == 0.0)
+                {
+                    txtXRW.Text = Math.Abs(xturns).ToString() + "T";
+                    txtXLW.Text = Math.Abs(xturns).ToString() + "T";
+                }
+                else
+                {
+                    txtXRW.Text = Math.Abs(xturns).ToString() + "T - " + (xdt - xremainder).ToString();
+                    txtXLW.Text = Math.Abs(xturns).ToString() + "T + " + xremainder.ToString();
+                }
             }
 
             if (yturns > 0 || yremainder > 0)
             {
                 lblYFD.Text = "CCW";
+
+                yremainder = Math.Abs(yremainder);
+
+                if (yremainder == 0.0)
+                {
+                    txtYFW.Text = Math.Abs(yturns).ToString() + "T";
+                }
+                else
+                {
+                    txtYFW.Text = Math.Abs(yturns).ToString() + "T - " + (ydt - yremainder).ToString();
+                }
             }
             else
             {
                 lblYFD.Text = "CW";
+
+                yremainder = Math.Abs(yremainder);
+
+                if (yremainder == 0.0)
+                {
+                    txtYFW.Text = Math.Abs(yturns).ToString() + "T";
+                }
+                else
+                {
+                    txtYFW.Text = Math.Abs(yturns).ToString() + "T + " + yremainder.ToString();
+                }
             }
         }
 
